@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 25%, #16213e 50%, #0f0f23 75%, #1a1a2e 100%);
+  background-attachment: fixed;
+  color: #ffffff;
+  overflow-x: hidden;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff6b6b 0%, #4ecdc4 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ff5252 0%, #26a69a 100%);
+}
+
+/* Gradient text effects */
+.gradient-text {
+  background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated gradient background */
+.animated-gradient {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Gradient border effect */
+.gradient-border {
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.2), rgba(78, 205, 196, 0.2)) border-box;
+  background-clip: padding-box;
+}
+
+/* Neon glow effects */
+.neon-glow {
+  box-shadow: 0 0 20px rgba(255, 107, 107, 0.3), 0 0 40px rgba(78, 205, 196, 0.2);
+}
+
+/* Smooth scroll animations */
+.smooth-scroll {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced hover animations */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Pulse animation for buttons */
+.pulse-glow {
+  animation: pulseGlow 2s infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 107, 107, 0.6), 0 0 40px rgba(78, 205, 196, 0.4);
+  }
+}
+
+/* Mobile-first responsive design */
+@media (max-width: 640px) {
+  .mobile-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .mobile-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  
+  .mobile-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+  }
+  
+  .mobile-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .mobile-hero {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .mobile-nav {
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Tablet responsive design */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .tablet-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .tablet-hero {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+/* Desktop responsive design */
+@media (min-width: 1025px) {
+  .desktop-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  .desktop-hero {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+/* Touch-friendly mobile interactions */
+@media (hover: none) and (pointer: coarse) {
+  .hover-lift:hover {
+    transform: none;
+  }
+  
+  .mobile-touch {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
